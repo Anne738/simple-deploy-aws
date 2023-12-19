@@ -1,15 +1,4 @@
 from flask import Flask
-app = Flask(__name__)
- 
-@app.route('/')
-@app.route('/home')
-def home():
-    return 'Hello world from app Pipeline testing V2'
- 
-if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=8080)
-
-'''from flask import Flask
 
 app = Flask(__name__)
 
@@ -51,4 +40,4 @@ def home():
     return orders_text
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=8080)'''
+    app.run(debug=False, host='0.0.0.0', port=8080)

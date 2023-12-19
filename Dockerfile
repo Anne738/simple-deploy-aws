@@ -1,5 +1,5 @@
 FROM python:3
-ADD app.py /
+ADD prog.py /
 RUN pip install flask
 RUN pip install flask_restful
 EXPOSE 8080

@@ -1,5 +1,22 @@
 import unittest
 import prog
+import json
+
+class FlaskAppTests(unittest.TestCase):
+
+    def setUp(self):
+        self.app = prog.app.test_client()
+
+    def test_get_hello_endpoint(self):
+        r = self.app.get('/')        
+        self.assertEqual(r._status_code, 200) 
+        self.assertEqual(r.get_data(), b'Hello world from app Pipeline testing V2')    
+
+if __name__ == '__main__':
+    unittest.main()
+
+'''import unittest
+import prog
 
 class TestOrderStack(unittest.TestCase):
     def setUp(self):
@@ -39,3 +56,4 @@ class TestOrderStack(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 
+'''

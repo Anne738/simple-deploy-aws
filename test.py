@@ -27,6 +27,14 @@ class TestOrderStack(unittest.TestCase):
     def test_view(self):
         self.assertEqual(self.order.view(), None)
 
+    def test_view(self):
+        orde = prog.OrderStack()
+        orde.push('item1', 3)
+        orde.push('item2', 5)
+
+        expected_result = "Список замовлень:\n- item1 (3 одиниць)\n- item2 (5 одиниць)\n"
+        self.assertEqual(orde.view(), expected_result)
+
 
 if __name__ == "__main__":
     unittest.main()

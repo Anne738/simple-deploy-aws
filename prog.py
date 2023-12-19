@@ -2,12 +2,10 @@ from flask import Flask
 
 app = Flask(__name__)
 
-
 class Order:
     def __init__(self, item, quantity):
         self.item = item
         self.quantity = quantity
-
 
 class OrderStack:
     def __init__(self):
@@ -29,24 +27,17 @@ class OrderStack:
             orders_text += f"- {order.item} ({order.quantity} одиниць)\n"
         return orders_text
 
-
-
+# Глобальна змінна для зберігання стану замовлень
+order_stack = OrderStack()
 
 @app.route('/')
 def home():
-    return 'Hello!'
-
-
-@app.route('/view')
-def view_orders():
-    order_stack = OrderStack()
+    global order_stack
     order_stack.push('item1', 3)
     order_stack.push('item2', 5)
 
     orders_text = order_stack.view()
-
     return orders_text
-
 
 if __name__ == '__main__':
     app.run(debug=True)

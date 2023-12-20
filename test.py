@@ -25,9 +25,6 @@ class TestOrderStack(unittest.TestCase):
             orde.pop()
 
     def test_view(self):
-        self.assertEqual(self.order.view(), None)
-
-    def test_view(self):
         orde = prog.OrderStack()
         orde.push('item1', 3)
         orde.push('item2', 5)

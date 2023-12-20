@@ -27,7 +27,6 @@ class OrderStack:
             orders_text += f"- {order.item} ({order.quantity} одиниць)\n"
         return orders_text
 
-# Глобальна змінна для зберігання стану замовлень
 order_stack = OrderStack()
 
 @app.route('/')
@@ -40,4 +39,4 @@ def home():
     return orders_text
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=8080)
+    app.run(host='0.0.0.0', port=5000, debug=True)
